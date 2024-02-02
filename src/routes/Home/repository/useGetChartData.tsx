@@ -4,11 +4,12 @@ import { AxiosError } from 'axios';
 import { message } from 'antd';
 import UseErrorAxios from '../../../shared/usecase/useErrorAxios';
 import { DummyAPI } from '../../../shared/repositories/dummyService';
+import { RootProductI } from '@/shared/model/apiInterface';
 
 const UseGetChartData = (
-	setInitialData: any,
-	setListOfCategory: any,
-	setDataByBrand: any
+	setInitialData: (payloadInitialData: RootProductI[]) => void,
+	setListOfCategory: () => void,
+	setDataByBrand: (payloadInitialData: RootProductI[]) => void
 ) => {
 	const generateErrorMsg = UseErrorAxios();
 
